@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+    <style>
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: #ffffff;
+        }
+
+        .navbar-brand:hover {
+            color: #807f7f;
+            /* Change this to the color you want on hover */
+        }
+
+        .navbar-nav .nav-item .nav-link {
+            font-size: 1.1rem;
+            color: #ffffff;
+            padding: 0.75rem 1rem;
+        }
+
+        .navbar-nav .nav-item .nav-link:hover {
+            color: #9b9898;
+        }
+
+        .navbar-toggler {
+            border-color: #ffffff;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%285, 5, 5, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+
+        .glassy-effect {
+            background: rgba(255, 255, 255, 0.103);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body class="d-flex flex-column min-vh-100 bg-dark text-white">
+    <nav class="navbar navbar-expand-lg bg-dark">
+        <div class="container-fluid d-flex justify-content-between align-items-center"> <a class="navbar-brand"
+                href="{% url 'index' %}"> <i class="fa-solid fa-graduation-cap fa-lg"></i> Student Management System
+            </a> <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+                aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation"> <span
+                    class="navbar-toggler-icon"></span> </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarColor01">
+                <ul class="navbar-nav">
+                    <li class="nav-item"> <a class="nav-link" href="{% url 'index' %}"> <i
+                                class="fa-solid fa-list fa-lg"></i> All Students </a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="{% url 'add' %}"> <i
+                                class="fa-solid fa-plus fa-lg"></i> Add Student </a> </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container-fluid">{% block body %} {% endblock %}</div>
+
+    <footer class="bg-dark text-white text-center text-lg-start mt-auto w-100">
+        <div class="container p-4">
+            <h3 class="text-center p-5">About Developer</h3>
+            <div class="row justify-content-evenly">
+                <!-- About Section -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Contact</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="mailto:developer@example.com" class="text-white">sudiptadas26022003@gmail.com</a>
+                        </li>
+                        <li>Phone: +8801728008193</li>
+                    </ul>
+                </div>
+                <!-- Portfolio Section -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Portfolio</h5>
+                    <p>Explore my projects and works:<br> <a href="https://26sudipta.github.io/porfolio/" target="_blank"
+                            class="text-white">Visit My Portfolio</a></p>
+                </div>
+                <!-- Social Media Section -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Follow Me On</h5>
+                    <div class="d-flex ">
+                        <a href="https://www.linkedin.com/in/sudipta-das-48372b325/" target="_blank"
+                            class="text-white me-3"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="https://github.com/26sudipta" target="_blank" class="text-white me-3"><i
+                                class="fab fa-github fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3 ">
+            © 2024 Sudipta Das. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
